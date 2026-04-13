@@ -36,7 +36,8 @@ class StocksEnv(TradingEnv):
             trade = True
 
         if trade:
-            current_price = self.prices[self._current_tick]
+            self._current_tick = min(self._current_tick, len(self.prices) - 1)
+            current_price = self.prices[self._current_tick - 1]
             last_trade_price = self.prices[self._last_trade_tick]
             price_diff = current_price - last_trade_price
 
@@ -54,6 +55,7 @@ class StocksEnv(TradingEnv):
             trade = True
 
         if trade or self._truncated:
+            self._current_tick = min(self._current_tick, len(self.prices) - 1)
             current_price = self.prices[self._current_tick]
             last_trade_price = self.prices[self._last_trade_tick]
 
@@ -80,6 +82,7 @@ class StocksEnv(TradingEnv):
                 position = Positions.Long
 
             if position == Positions.Long:
+                self._current_tick = min(self._current_tick, len(self.prices) - 1)
                 current_price = self.prices[current_tick - 1]
                 last_trade_price = self.prices[last_trade_tick]
                 shares = profit / last_trade_price

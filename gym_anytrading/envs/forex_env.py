@@ -34,7 +34,7 @@ class ForexEnv(TradingEnv):
         ):
             trade = True
 
-        if trade:
+        if trade or self._truncated:
             current_price = self.prices[self._current_tick]
             last_trade_price = self.prices[self._last_trade_tick]
             price_diff = current_price - last_trade_price
