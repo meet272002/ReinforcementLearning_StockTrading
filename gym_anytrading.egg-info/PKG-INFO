@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: gym_anytrading
+Version: 1.0.0
+Author: Meet
+Author-email: ....
+License: ....
+Requires-Dist: gymnasium>=0.29.1
+Requires-Dist: numpy>=1.16.4
+Requires-Dist: pandas>=0.24.2
+Requires-Dist: matplotlib>=3.1.1
+Requires-Dist: seaborn>=0.13.2
