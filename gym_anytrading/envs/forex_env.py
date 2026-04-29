@@ -1,7 +1,7 @@
 import numpy as np
 
 from .trading_env import TradingEnv, Actions, Positions
-
+#defining the environments 
 class ForexEnv(TradingEnv):
     def __init__(self, df, window_size, frame_bound, unit_side='left', render_mode=None):
         assert len(frame_bound) == 2

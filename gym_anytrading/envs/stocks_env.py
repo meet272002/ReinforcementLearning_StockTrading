@@ -88,5 +88,6 @@ class StocksEnv(TradingEnv):
                 shares = profit / last_trade_price
                 profit = shares * current_price
             last_trade_tick = current_tick - 1
-
+        
+        ## returns the overall profit
         return profit
